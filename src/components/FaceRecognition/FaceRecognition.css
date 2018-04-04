@@ -1,0 +1,61 @@
+h1 {
+    color: #149df2;
+    text-shadow: 1px 1px 1px #1e3c72, 1px 1px 1px white;
+    font-weight: bold;
+}
+
+.container {
+    padding: 5px;
+}
+
+.photo {
+    max-width: 600px;
+    height: auto;
+    align-content: center;
+    
+}
+.bounding-box {
+    position: absolute;
+    box-shadow: 0 0 0 3px #149df2 inset;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.bounding-box:hover {
+    border: 1px solid green;
+}
+
+.demoInfo ul {
+    list-style: none;
+    text-align: left;
+    padding: 10px;
+    margin: 10px;
+    border: solid 1px white;
+    border-radius: 5px;
+    width: 100%;
+    color: #149df2;
+}
+
+h4 {
+    text-align: center;
+}
+
+.demoInfo ul li {
+    color: #149df2;
+}
+
+ul p {
+    color: aquamarine;
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+li span {
+    color: #FFD200; 
+    border: 1px solid white;
+    border-radius: 5px;
+    display: block;
+    padding: 3px;
+}

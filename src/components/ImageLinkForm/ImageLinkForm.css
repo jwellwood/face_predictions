@@ -1,0 +1,49 @@
+.jumbotron {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    background-color: rgb(173, 216, 230, 0.5);
+    border: 3px solid #1e3c72;
+    border-radius: 10px;
+    color: #1e3c72;
+    padding: 20px;
+}
+
+.inputField {
+    background: #1e3c72;
+    color: #FFD200;
+    font-weight: bold;
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 3px solid #F7971E;
+    border-radius: 15px;
+    display: block;
+}
+
+.detectButton {
+    background: #F7971E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFD200, #F7971E);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFD200, #F7971E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    width: 70%;
+}
+
+.resetButton {
+    background: lightgrey;
+    color: #1e3c72;
+    border: 2px solid #1e3c72;
+    width: 20%;
+}
+
+.detectButton, .resetButton {
+    font-family: 'Josefin Sans', sans-serif;
+    color: #1e3c72;
+    display: inline-block;
+    margin: 10px;
+    border: 2px solid #1e3c72;
+    font-weight: bold;
+    outline: none;
+    padding: 10px;
+    border-radius: 15px;
+}
