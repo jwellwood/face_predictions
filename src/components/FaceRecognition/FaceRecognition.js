@@ -8,11 +8,7 @@ const FaceRecognition = ({ imageUrl, box, onFaceClick, info }) => {
       <Row>
         <Col md="8">
           <div className="absolute photo">
-            <img
-              id="inputImage"
-              src={imageUrl}
-              alt=""
-            />
+            <img id="inputImage" src={imageUrl} alt="" />
             <div
               className="bounding-box"
               style={{
@@ -25,13 +21,22 @@ const FaceRecognition = ({ imageUrl, box, onFaceClick, info }) => {
             />
           </div>
         </Col>
-        <Col md="4" className='center'>
+        <Col md="4" className="center">
           <div className="demoInfo">
             <ul>
-                <h4>Demographics</h4>
-                <li>Age: <span> {info[0]}</span></li><p>{info[1]}%</p>
-                <li>Gender: <span> {info[2]}</span></li><p>{info[3]}%</p>
-                <li>Multicultural Profile: <span>{ info[4]}</span></li><p>{info[5]}%</p>
+              <h4>Demographics</h4>
+              <li>
+                Age: <span> {info[0]}</span>
+              </li>
+              <p>{info[1]}%</p>
+              <li>
+                Gender: <span> {info[2]}</span>
+              </li>
+              <p>{info[3]}%</p>
+              <li>
+                Multicultural Profile: <span>{info[4]}</span>
+              </li>
+              <p>{info[5]}%</p>
             </ul>
           </div>
         </Col>

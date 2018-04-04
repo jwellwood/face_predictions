@@ -10,8 +10,10 @@ import Navigation from "./components/Navbar/Navbar";
 const app = new Clarifai.App({ apiKey: "b687b3be89474539b5362b0c2f5f5dfc" });
 
 const initialState = {
-  input: "https://twistedsifter.files.wordpress.com/2018/02/photoshopping-trumps-face-onto-the-queens-36.jpg?w=640&h=435",
-  imageUrl: "https://twistedsifter.files.wordpress.com/2018/02/photoshopping-trumps-face-onto-the-queens-36.jpg?w=640&h=435",
+  input:
+    "https://twistedsifter.files.wordpress.com/2018/02/photoshopping-trumps-face-onto-the-queens-36.jpg?w=640&h=435",
+  imageUrl:
+    "https://twistedsifter.files.wordpress.com/2018/02/photoshopping-trumps-face-onto-the-queens-36.jpg?w=640&h=435",
   info: "",
   box: {}
 };
@@ -93,16 +95,15 @@ class App extends Component {
       .catch(err => console.log("unable to work with API", err));
   };
 
-
   render() {
     return (
       <div className="App">
-       <Background />
+        <Background />
         <div>
           <Navigation />
           <ImageLinkForm
             onInputChange={this.onInputChange}
-            onButtonClick={this.onButtonSubmit}       
+            onButtonClick={this.onButtonSubmit}
           />
           <FaceRecognition
             box={this.state.box}

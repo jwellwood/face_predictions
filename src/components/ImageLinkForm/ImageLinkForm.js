@@ -9,7 +9,7 @@ const ImageLinkForm = ({ onInputChange, onButtonClick, onResetClick }) => {
       <Jumbotron className="jumbotron">
         <input
           className="inputField"
-          id='urlInputForm'
+          id="urlInputForm"
           placeholder="paste image url here"
           onChange={onInputChange}
         />
