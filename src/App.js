@@ -9,19 +9,17 @@ import Navigation from "./components/Navbar/Navbar";
 
 const app = new Clarifai.App({ apiKey: "b687b3be89474539b5362b0c2f5f5dfc" });
 
-const initialState = {
-  input:
-    "https://twistedsifter.files.wordpress.com/2018/02/photoshopping-trumps-face-onto-the-queens-36.jpg?w=640&h=435",
-  imageUrl:
-    "https://twistedsifter.files.wordpress.com/2018/02/photoshopping-trumps-face-onto-the-queens-36.jpg?w=640&h=435",
-  info: "",
-  box: {}
-};
-
 class App extends Component {
   constructor() {
     super();
-    this.state = initialState;
+    this.state = {
+      input:
+        "https://twistedsifter.files.wordpress.com/2018/02/photoshopping-trumps-face-onto-the-queens-36.jpg?w=640&h=435",
+      imageUrl:
+        "https://twistedsifter.files.wordpress.com/2018/02/photoshopping-trumps-face-onto-the-queens-36.jpg?w=640&h=435",
+      info: "",
+      box: {}
+    };
   }
 
   calculateFaceLocation = data => {

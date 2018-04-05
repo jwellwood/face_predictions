@@ -4,6 +4,18 @@ h1 {
     font-weight: bold;
 }
 
+.jumbotron {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: rgb(173, 216, 230, 0.5);
+    border: 3px solid #1e3c72;
+    border-radius: 10px;
+    color: #1e3c72;
+    padding: 20px;
+}
+
 .container {
     padding: 5px;
 }
@@ -11,15 +23,13 @@ h1 {
 .photo {
     max-width: 600px;
     height: auto;
-    align-content: center;
-    
+    position: relative;
+    margin: auto;
 }
 .bounding-box {
     position: absolute;
     box-shadow: 0 0 0 3px #149df2 inset;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: block;
     cursor: pointer;
 }
 
@@ -27,35 +37,53 @@ h1 {
     border: 1px solid green;
 }
 
+.demoInfo {
+    display:block;
+    width: 80%;
+    min-width: 200px;
+    margin: 10px auto;
+    padding: 10px;
+}
+
 .demoInfo ul {
     list-style: none;
     text-align: left;
-    padding: 10px;
-    margin: 10px;
-    border: solid 1px white;
+    padding: 0px;
+    margin: 0px;
+    border: solid 1px #149df2;
     border-radius: 5px;
     width: 100%;
-    color: #149df2;
+    color: #1e3c72;
+    background-color: rgb(20, 157, 242, 0.7)
+}
+
+ul {
+    margin: 0;
+    padding: 0;
 }
 
 h4 {
     text-align: center;
+    margin-top: 10px;
 }
 
 .demoInfo ul li {
-    color: #149df2;
+    color: #1e3c72;
 }
 
 ul p {
     color: aquamarine;
     text-align: right;
-    margin-bottom: 5px;
+    margin-right: 10px;
 }
 
 li span {
     color: #FFD200; 
-    border: 1px solid white;
+    border: solid 1px #149df2;
+    background-color: #1e3c72;
     border-radius: 5px;
     display: block;
     padding: 3px;
+    margin: 0px 5px;
+    padding: 5px;
 }
