@@ -12,10 +12,10 @@ const Navigation = () => {
         </NavbarBrand>
         <Nav>
           <NavItem className="navitem">
-            <NavLink href="#">About</NavLink>
+            <NavLink href="/">About</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="https://github.com/jwellwood">
+            <NavLink href="https://github.com/jwellwood/face_predictions">
               <i className="fab fa-github" />
             </NavLink>
           </NavItem>

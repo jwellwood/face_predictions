@@ -22,14 +22,14 @@ hr {
 }
 
 .photo {
-    width: 320px;
+    width: 500px;
     height: auto;
     margin: auto;
     position: relative;
 }
 
 #inputImage {
-    width: 320px;
+    width: 500px;
 }
 
 .bounding-box {
@@ -47,7 +47,7 @@ hr {
 
 .demoInfo {
     display: block;
-    width: 320px;
+    width: 500px;
     min-width: 150px;
     margin: 10px auto;
     padding: 10px;
@@ -107,3 +107,9 @@ ul p {
     color: #1e3c72;
     border: 1px solid #1e3c72;
 }
+
+@media (max-width: 500px) {
+    .photo, #inputImage, .demoInfo {
+      width: 320px;
+    }
+  }
