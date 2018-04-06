@@ -17,7 +17,7 @@ const ImageLinkForm = ({ onInputChange, onButtonClick, onResetClick }) => {
         <hr />
         <ul>
           <li>1. Right click on an image and select 'copy image address'</li>
-          <li>2. Paste your image above</li>
+          <li>2. Paste your image address above</li>
           <li>3. Click 'detect'</li>
           <li>4. Click on the blue box to get demographic information</li>
         </ul>

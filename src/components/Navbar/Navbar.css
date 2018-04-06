@@ -4,6 +4,12 @@
     margin-bottom: 15px;
 }
 
+.brand {
+    cursor: pointer;
+}
+
 .navitem {
     margin-right: 10px;
+    cursor: pointer;
+    color: #007bff;
 }

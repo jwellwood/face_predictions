@@ -3,16 +3,16 @@ import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from "reactstrap";
 import Logo from "../Logo/Logo";
 import "./Navbar.css";
 
-const Navigation = () => {
+const Navigation = ({ onRouteChange }) => {
   return (
     <div>
       <Navbar className="navbar">
-        <NavbarBrand href="/" className="mr-auto">
+        <NavbarBrand className='brand' onClick={() => onRouteChange("/")}>
           <Logo />
         </NavbarBrand>
         <Nav>
           <NavItem className="navitem">
-            <NavLink href="/">About</NavLink>
+            <NavLink onClick={() => onRouteChange("/about")}>About</NavLink>
           </NavItem>
           <NavItem>
             <NavLink href="https://github.com/jwellwood/face_predictions">

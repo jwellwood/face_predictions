@@ -6,6 +6,7 @@ import Clarifai from "clarifai";
 import "tachyons";
 import "./App.css";
 import Navigation from "./components/Navbar/Navbar";
+import About from "./components/About/About";
 
 const app = new Clarifai.App({ apiKey: "b687b3be89474539b5362b0c2f5f5dfc" });
 
@@ -18,7 +19,8 @@ class App extends Component {
       imageUrl:
         "https://twistedsifter.files.wordpress.com/2018/02/photoshopping-trumps-face-onto-the-queens-36.jpg?w=640&h=435",
       info: "",
-      box: {}
+      box: {},
+      route: "/"
     };
   }
 
@@ -71,7 +73,7 @@ class App extends Component {
       multicultureName2,
       multiculturePercent2,
       multicultureName3,
-      multiculturePercent3,
+      multiculturePercent3
     ];
   };
 
@@ -108,23 +110,31 @@ class App extends Component {
       .catch(err => console.log("unable to work with API", err));
   };
 
+  onRouteChange = route => {
+    this.setState({ route: route });
+  };
+
   render() {
     return (
       <div className="App">
         <Background />
-        <div>
-          <Navigation />
-          <ImageLinkForm
-            onInputChange={this.onInputChange}
-            onButtonClick={this.onButtonSubmit}
-          />
-          <FaceRecognition
-            box={this.state.box}
-            info={this.state.info}
-            imageUrl={this.state.imageUrl}
-            onFaceClick={this.onFaceClick}
-          />
-        </div>
+        <Navigation onRouteChange={this.onRouteChange} />
+        {this.state.route === "/about" ? (
+          <About /> 
+        ) : (
+          <div>
+            <ImageLinkForm
+              onInputChange={this.onInputChange}
+              onButtonClick={this.onButtonSubmit}
+            />
+            <FaceRecognition
+              box={this.state.box}
+              info={this.state.info}
+              imageUrl={this.state.imageUrl}
+              onFaceClick={this.onFaceClick}
+            />
+          </div>
+        )}
       </div>
     );
   }
