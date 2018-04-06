@@ -36,27 +36,42 @@ class App extends Component {
     };
   };
 
-  calculateAge = data => {
+  calculateData = data => {
     const dataPath = data.outputs[0].data.regions[0].data.face;
+    // get age
     const age = dataPath.age_appearance.concepts[0];
-    const gender = dataPath.gender_appearance.concepts[0];
-    const multiculture = dataPath.multicultural_appearance.concepts[0];
     const ageNumber = age.name;
     const ageProb = age.value * 100;
     const agePercent = ageProb.toFixed();
+    // get gender
+    const gender = dataPath.gender_appearance.concepts[0];
     const genderName = gender.name;
     const genderProb = gender.value * 100;
     const genderPercent = genderProb.toFixed();
+    // Get multicultural appearance, top 3
+    const multiculture = dataPath.multicultural_appearance.concepts[0];
+    const multiculture2 = dataPath.multicultural_appearance.concepts[1];
+    const multiculture3 = dataPath.multicultural_appearance.concepts[2];
     const multicultureName = multiculture.name;
+    const multicultureName2 = multiculture2.name;
+    const multicultureName3 = multiculture3.name;
     const multicultureProb = multiculture.value * 100;
+    const multicultureProb2 = multiculture2.value * 100;
+    const multicultureProb3 = multiculture3.value * 100;
     const multiculturePercent = multicultureProb.toFixed();
+    const multiculturePercent2 = multicultureProb2.toFixed();
+    const multiculturePercent3 = multicultureProb3.toFixed();
     return [
       ageNumber,
       agePercent,
       genderName,
       genderPercent,
       multicultureName,
-      multiculturePercent
+      multiculturePercent,
+      multicultureName2,
+      multiculturePercent2,
+      multicultureName3,
+      multiculturePercent3,
     ];
   };
 
@@ -89,7 +104,7 @@ class App extends Component {
       // .then(function(response){
       //   console.log(response)
       // })
-      .then(response => this.displayAgeBox(this.calculateAge(response)))
+      .then(response => this.displayAgeBox(this.calculateData(response)))
       .catch(err => console.log("unable to work with API", err));
   };
 

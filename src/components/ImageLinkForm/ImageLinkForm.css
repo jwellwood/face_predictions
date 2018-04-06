@@ -1,3 +1,7 @@
+.header {
+    margin:0px 0px 10px 0px;
+}
+
 .jumbotron {
     width: 80%;
     margin: auto;
@@ -23,11 +27,32 @@
     display: block;
 }
 
+hr {
+    background-color: #1e3c72;
+    width: 90%;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
 .detectButton {
-    background: #F7971E;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #FFD200, #F7971E);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #FFD200, #F7971E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #F7971E;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFD200, #F7971E);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFD200, #F7971E);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     width: 70%;
+    transition: ease-in-out 0.5s;
+}
+
+.detectButton:hover {
+    background: aquamarine;
+    transform: scale(1.01);
 }
 
 .resetButton {
@@ -38,7 +63,12 @@
     min-width: 100px;
 }
 
-.detectButton, .resetButton {
+.resetButton:hover {
+    background: cadetblue;
+}
+
+.detectButton,
+.resetButton {
     font-family: 'Josefin Sans', sans-serif;
     color: #1e3c72;
     display: inline-block;
