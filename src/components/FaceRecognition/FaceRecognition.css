@@ -21,15 +21,22 @@ h1 {
 }
 
 .photo {
-    max-width: 600px;
+    width: 400px;
     height: auto;
-    position: relative;
     margin: auto;
+    position: relative;
 }
+
+#inputImage {
+    width: 400px;
+}
+
 .bounding-box {
     position: absolute;
     box-shadow: 0 0 0 3px #149df2 inset;
     display: block;
+    flex-wrap: wrap;
+    margin: auto;
     cursor: pointer;
 }
 
