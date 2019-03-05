@@ -1,12 +1,10 @@
-import React from "react";
-import "./ImageLinkForm.css";
-import { Jumbotron } from "reactstrap";
+import React from 'react';
+import './ImageLinkForm.css';
+import { Jumbotron } from 'reactstrap';
 
 const ImageLinkForm = ({ onInputChange, onButtonClick, onResetClick }) => {
   return (
     <div>
-      <h6>The Amazing</h6>
-      <h1 className='header'>Face Predictor</h1>
       <Jumbotron className="jumbotron">
         <input
           className="inputField"

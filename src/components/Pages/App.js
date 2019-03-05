@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
-import FaceRecognition from './components/FaceRecognition/FaceRecognition';
+import ImageLinkForm from '../ImageLinkForm/ImageLinkForm';
+import FaceRecognition from '../FaceRecognition/FaceRecognition';
 import Clarifai from 'clarifai';
 import './App.css';
-import PageContainer from './components/hoc/PageContainer';
+import PageContainer from '../hoc/PageContainer';
+import Title from '../ui/Title/Title';
 
 const app = new Clarifai.App({ apiKey: 'b687b3be89474539b5362b0c2f5f5dfc' });
 
@@ -106,6 +107,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Title />
         <ImageLinkForm
           onInputChange={this.onInputChange}
           onButtonClick={this.onButtonSubmit}

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import App from './App';
-import Navigation from './components/Navbar/Navbar';
-import About from './components/About/About';
-import Background from './components/Background/Background';
+import App from './components/Pages/App';
+import Navigation from './components/ui/Navbar/Navbar';
+import About from './components/Pages/About';
+import Background from './components/ui/Background/Background';
 
 const Routes = () => {
   return (
