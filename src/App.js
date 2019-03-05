@@ -1,40 +1,33 @@
-import React, { Component } from "react";
-import ImageLinkForm from "./components/ImageLinkForm/ImageLinkForm";
-import FaceRecognition from "./components/FaceRecognition/FaceRecognition";
-import Background from "./components/Background/Background";
-import Clarifai from "clarifai";
-import "tachyons";
-import "./App.css";
-import Navigation from "./components/Navbar/Navbar";
-import About from "./components/About/About";
+import React, { Component } from 'react';
+import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
+import FaceRecognition from './components/FaceRecognition/FaceRecognition';
+import Clarifai from 'clarifai';
+import './App.css';
+import PageContainer from './components/hoc/PageContainer';
 
-const app = new Clarifai.App({ apiKey: "b687b3be89474539b5362b0c2f5f5dfc" });
+const app = new Clarifai.App({ apiKey: 'b687b3be89474539b5362b0c2f5f5dfc' });
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      input:
-        "https://twistedsifter.files.wordpress.com/2018/02/photoshopping-trumps-face-onto-the-queens-36.jpg?w=640&h=435",
-      imageUrl:
-        "https://twistedsifter.files.wordpress.com/2018/02/photoshopping-trumps-face-onto-the-queens-36.jpg?w=640&h=435",
-      info: "",
-      box: {},
-      route: "/"
-    };
-  }
+  state = {
+    input:
+      'https://twistedsifter.files.wordpress.com/2018/02/photoshopping-trumps-face-onto-the-queens-36.jpg?w=640&h=435',
+    imageUrl:
+      'https://twistedsifter.files.wordpress.com/2018/02/photoshopping-trumps-face-onto-the-queens-36.jpg?w=640&h=435',
+    info: '',
+    box: {},
+  };
 
   calculateFaceLocation = data => {
     const clarifaiFace =
       data.outputs[0].data.regions[0].region_info.bounding_box;
-    const image = document.getElementById("inputImage");
+    const image = document.getElementById('inputImage');
     const width = Number(image.width);
     const height = Number(image.height);
     return {
       leftCol: clarifaiFace.left_col * width,
       topRow: clarifaiFace.top_row * height,
       rightCol: width - clarifaiFace.right_col * width,
-      bottomRow: height - clarifaiFace.bottom_row * height
+      bottomRow: height - clarifaiFace.bottom_row * height,
     };
   };
 
@@ -73,7 +66,7 @@ class App extends Component {
       multicultureName2,
       multiculturePercent2,
       multicultureName3,
-      multiculturePercent3
+      multiculturePercent3,
     ];
   };
 
@@ -92,49 +85,37 @@ class App extends Component {
   onButtonSubmit = () => {
     this.setState({ imageUrl: this.state.input });
     app.models
-      .predict("c0c0ac362b03416da06ab3fa36fb58e3", this.state.input)
+      .predict('c0c0ac362b03416da06ab3fa36fb58e3', this.state.input)
       .then(response =>
-        this.displayFaceBox(this.calculateFaceLocation(response))
+        this.displayFaceBox(this.calculateFaceLocation(response)),
       )
-      .catch(err => console.log("unable to work with API", err));
+      .catch(err => console.log('unable to work with API', err));
   };
 
   onFaceClick = () => {
     this.setState({ imageUrl: this.state.input });
     app.models
-      .predict("c0c0ac362b03416da06ab3fa36fb58e3", this.state.input)
+      .predict('c0c0ac362b03416da06ab3fa36fb58e3', this.state.input)
       // .then(function(response){
       //   console.log(response)
       // })
       .then(response => this.displayAgeBox(this.calculateData(response)))
-      .catch(err => console.log("unable to work with API", err));
-  };
-
-  onRouteChange = route => {
-    this.setState({ route: route });
+      .catch(err => console.log('unable to work with API', err));
   };
 
   render() {
     return (
       <div className="App">
-        <Background />
-        <Navigation onRouteChange={this.onRouteChange} />
-        {this.state.route === "/about" ? (
-          <About /> 
-        ) : (
-          <div>
-            <ImageLinkForm
-              onInputChange={this.onInputChange}
-              onButtonClick={this.onButtonSubmit}
-            />
-            <FaceRecognition
-              box={this.state.box}
-              info={this.state.info}
-              imageUrl={this.state.imageUrl}
-              onFaceClick={this.onFaceClick}
-            />
-          </div>
-        )}
+        <ImageLinkForm
+          onInputChange={this.onInputChange}
+          onButtonClick={this.onButtonSubmit}
+        />
+        <FaceRecognition
+          box={this.state.box}
+          info={this.state.info}
+          imageUrl={this.state.imageUrl}
+          onFaceClick={this.onFaceClick}
+        />
       </div>
     );
   }
