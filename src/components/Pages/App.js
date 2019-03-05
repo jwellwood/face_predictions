@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import ImageLinkForm from '../ImageLinkForm/ImageLinkForm';
+import ImageLinkForm from '../ImageLinkForm/Form/ImageLinkForm';
 import FaceRecognition from '../FaceRecognition/FaceRecognition';
 import Clarifai from 'clarifai';
-import './App.css';
-import PageContainer from '../hoc/PageContainer';
+import '../../assets/styles/App.css';
 import Title from '../ui/Title/Title';
+import Instructions from '../ImageLinkForm/Instructions/Instructions';
+import PageContainer from '../hoc/PageContainer';
+import DisplayContainer from '../DisplayInfo/DisplayContainer';
 
 const app = new Clarifai.App({ apiKey: 'b687b3be89474539b5362b0c2f5f5dfc' });
 
@@ -97,28 +99,27 @@ class App extends Component {
     this.setState({ imageUrl: this.state.input });
     app.models
       .predict('c0c0ac362b03416da06ab3fa36fb58e3', this.state.input)
-      // .then(function(response){
-      //   console.log(response)
-      // })
       .then(response => this.displayAgeBox(this.calculateData(response)))
       .catch(err => console.log('unable to work with API', err));
   };
 
   render() {
     return (
-      <div className="App">
-        <Title />
-        <ImageLinkForm
-          onInputChange={this.onInputChange}
-          onButtonClick={this.onButtonSubmit}
-        />
-        <FaceRecognition
-          box={this.state.box}
-          info={this.state.info}
-          imageUrl={this.state.imageUrl}
-          onFaceClick={this.onFaceClick}
-        />
-      </div>
+      <PageContainer>
+        <div className="App">
+          <ImageLinkForm
+            onInputChange={this.onInputChange}
+            onButtonClick={this.onButtonSubmit}
+          />
+          <DisplayContainer
+            box={this.state.box}
+            info={this.state.info}
+            imageUrl={this.state.imageUrl}
+            onFaceClick={this.onFaceClick}
+          />
+          <Instructions />
+        </div>
+      </PageContainer>
     );
   }
 }

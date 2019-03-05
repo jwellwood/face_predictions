@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Navbar, NavbarBrand, Nav, Button } from 'reactstrap';
 import Logo from '../Logo/Logo';
-import './Navbar.css';
+import '../../../assets/styles/Navbar.css';
 import NavButton from './NavButton';
 
 const Navigation = ({ onRouteChange }) => {
@@ -16,6 +16,7 @@ const Navigation = ({ onRouteChange }) => {
         </NavbarBrand>
 
         <NavButton link="/about" text="About" />
+        <NavButton link="/detect" text="Detect" />
         <Button
           size="sm"
           color="primary"
