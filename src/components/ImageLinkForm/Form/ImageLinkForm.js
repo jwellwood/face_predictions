@@ -7,20 +7,22 @@ const ImageLinkForm = props => {
   return (
     <div>
       <InputGroup style={{ marginBottom: '0.5rem' }}>
-        <Input placeholder="paste image url here" onChange={onInputChange} />
+        <Input
+          id="input"
+          placeholder="paste image url here"
+          onChange={onInputChange}
+        />
         <InputGroupAddon addonType="append">
-          <Button onClick={onButtonClick}>Detect</Button>
+          <Button onClick={onButtonClick} color="primary">
+            Detect
+          </Button>
         </InputGroupAddon>
         <InputGroupAddon addonType="append">
-          <Button onClick={onReset} size="sm" color="danger">
+          <Button onClick={onReset} size="sm" color="warning">
             <i className="fas fa-times" />
           </Button>
         </InputGroupAddon>
       </InputGroup>
-      <Alert color="info">
-        <i className="fas fa-exclamation-circle" /> Make sure that you copy the
-        <strong> image address</strong>, not just the image
-      </Alert>
     </div>
   );
 };

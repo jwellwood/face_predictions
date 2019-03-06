@@ -14,13 +14,14 @@ class Instructions extends Component {
   render() {
     const { collapse } = this.state;
     return (
-      <div>
+      <div style={{ margin: '5px auto', textAlign: 'left' }}>
         <Button
-          color="primary"
+          color="warning"
           onClick={this.toggle}
           style={{ marginBottom: '0.5rem' }}
+          size="sm"
         >
-          Instructions
+          Toggle Instructions
         </Button>
         <Collapse isOpen={collapse}>
           <InstructionsList />

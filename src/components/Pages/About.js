@@ -2,6 +2,7 @@ import React from 'react';
 import { Jumbotron, Button } from 'reactstrap';
 import PageContainer from '../hoc/PageContainer';
 import PageHeader from '../ui/Title/PageHeader';
+import styles from './styles/About.module.css';
 
 const About = () => {
   const listItem = (icon, title, link, linkTitle) => {
@@ -45,7 +46,7 @@ const About = () => {
   return (
     <PageContainer>
       <PageHeader title="About" />
-      <Jumbotron>
+      <Jumbotron className={styles.Jumbotron}>
         <h5>This app was made using:</h5>
         <ul>
           {listItems.map(item => (

@@ -1,6 +1,9 @@
 import React from 'react';
 import { ListGroup, ListGroupItem, ListGroupItemHeading } from 'reactstrap';
 import { getMax, getMin, getAverage, getBestResults } from './functions';
+import styles from './styles/Demographics.module.css';
+import Placeholder from './Placeholders/Placeholder';
+
 const Demographics = props => {
   const { info } = props;
   const ageArray = info.age;
@@ -14,76 +17,54 @@ const Demographics = props => {
     const getGenderPercent = (info.gender[0].value * 100).toFixed(0);
     const getBackground = info.multiculture.slice(0, 3);
 
-    console.log(getBackground);
+    const listItem = (description, value) => {
+      return { description, value };
+    };
+    const listItems = [
+      listItem('Most likely', mostLikely),
+      listItem('Average', averageAge),
+      listItem('Range', `${minAge}-${maxAge}`),
+    ];
+
     return (
       <ListGroup>
         <ListGroupItem>
-          <ListGroupItemHeading>Age</ListGroupItemHeading>
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <span>Average</span>
-            <span>
-              {averageAge} {minAge} - {maxAge}
-            </span>
-            {mostLikely}
+          <ListGroupItemHeading className={styles.Title}>
+            Age
+          </ListGroupItemHeading>
+          {listItems.map(item => (
+            <div key={item.description} className={styles.ListItem}>
+              <div className={styles.Description}>{item.description}</div>
+              <div className={styles.Value}> {item.value}</div>
+            </div>
+          ))}
+        </ListGroupItem>
+        <ListGroupItem>
+          <ListGroupItemHeading className={styles.Title}>
+            Gender
+          </ListGroupItemHeading>
+          <div className={styles.ListItem}>
+            <div className={styles.Description}>{getGender}</div>
+            <div className={styles.Value}>{getGenderPercent}%</div>
           </div>
         </ListGroupItem>
         <ListGroupItem>
-          <ListGroupItemHeading>Gender</ListGroupItemHeading>
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <span>{getGender}</span>
-            <span>{getGenderPercent}%</span>
-          </div>
-        </ListGroupItem>
-        <ListGroupItem>
-          <ListGroupItemHeading>Background</ListGroupItemHeading>
+          <ListGroupItemHeading className={styles.Title}>
+            Background
+          </ListGroupItemHeading>
           {getBackground.map(value => (
-            <div key={value.name}>
-              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <div>{value.name}</div>
-                <div>{(value.value * 100).toFixed(2)}%</div>
+            <div key={value.name} className={styles.ListItem}>
+              <div className={styles.Description}>{value.name}</div>
+              <div className={styles.Value}>
+                {(value.value * 100).toFixed(2)}%
               </div>
-              <hr />
             </div>
           ))}
         </ListGroupItem>
       </ListGroup>
     );
   }
-
-  // return (
-  //   <div className="demoInfo">
-  //     <ul>
-  //       <li>
-  //         Age: <span> {info[0]}</span>
-  //       </li>
-  //       <p>{info[1]}%</p>
-  //       <hr />
-  //       <li>
-  //         Gender: <span> {info[2]}</span>
-  //       </li>
-  //       <p>{info[3]}%</p>
-  //       <hr />
-  //       <li>
-  //         Multicultural Profile: <span>{info[4]}</span>
-  //       </li>
-  //       <p>{info[5]}%</p>
-  //       <div className="secondaryInfo">
-  //         <li>
-  //           <span>{info[6]}</span>
-  //         </li>
-  //         <p>{info[7]}%</p>
-  //         <li>
-  //           <span>{info[8]}</span>
-  //         </li>
-  //         <p>{info[9]}%</p>
-  //       </div>
-  //     </ul>
-  //   </div>
-  // );
-  // if (ageArray) {
-
-  // }
-  return <div style={{ width: '3rem', height: '3rem' }}>Loading</div>;
+  return <Placeholder type="demo" text="Demographic data will appear here" />;
 };
 
 export default Demographics;

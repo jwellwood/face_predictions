@@ -7,7 +7,7 @@ import PageContainer from '../hoc/PageContainer';
 import DisplayContainer from '../DisplayInfo/DisplayContainer';
 import PageHeader from '../ui/Title/PageHeader';
 
-const app = new Clarifai.App({ apiKey: 'b687b3be89474539b5362b0c2f5f5dfc' });
+const app = new Clarifai.App({ apiKey: process.env.REACT_APP_API_KEY });
 const baseURL =
   'https://twistedsifter.files.wordpress.com/2018/02/photoshopping-trumps-face-onto-the-queens-36.jpg?w=640&h=435';
 
@@ -58,7 +58,7 @@ class App extends Component {
   };
 
   onReset = () => {
-    this.setState({ imageUrl: null, info: [] });
+    this.setState({ imageUrl: null, info: [], box: {}, input: '' });
   };
 
   onButtonSubmit = () => {
@@ -66,7 +66,6 @@ class App extends Component {
     app.models
       .predict('c0c0ac362b03416da06ab3fa36fb58e3', this.state.input)
       .then(res => {
-        console.log(res);
         this.displayFaceBox(this.calculateFaceLocation(res));
       })
       .catch(err => console.log('unable to work with API', err));
@@ -85,19 +84,20 @@ class App extends Component {
     return (
       <PageContainer>
         <PageHeader title="Detect" />
+        <Instructions />
         <div className="App">
           <ImageLinkForm
             onInputChange={this.onInputChange}
             onButtonClick={this.onButtonSubmit}
             onReset={this.onReset}
           />
+
           <DisplayContainer
             box={box}
             info={info}
             imageUrl={imageUrl}
             onFaceClick={this.onFaceClick}
           />
-          <Instructions />
         </div>
       </PageContainer>
     );

@@ -1,7 +1,6 @@
 import React from 'react';
-import { Jumbotron } from 'reactstrap';
-import styles from './Photo.module.css';
-import PhotoPlaceholder from './PhotoPlaceholder';
+import styles from './styles/Photo.module.css';
+import Placeholder from './Placeholders/Placeholder';
 
 const Photo = props => {
   const { imageUrl, box, onFaceClick } = props;
@@ -12,10 +11,10 @@ const Photo = props => {
           id="inputImage"
           src={imageUrl}
           alt=""
-          style={{ borderRadius: '10px' }}
+          style={{ borderRadius: '5px' }}
         />
       ) : (
-        <PhotoPlaceholder />
+        <Placeholder type="photo" text="Your photo will appear here" />
       )}
 
       <div
