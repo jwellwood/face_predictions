@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col, Jumbotron } from 'reactstrap';
-import Photo from '../FaceRecognition/Photo';
-import Demographics from '../FaceRecognition/Demographics';
+import Photo from './Photo';
+import Demographics from './Demographics';
 
 const DisplayContainer = props => {
   const { imageUrl, box, onFaceClick, info } = props;
