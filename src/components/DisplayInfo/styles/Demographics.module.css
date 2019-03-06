@@ -1,0 +1,23 @@
+.ListItem {
+  display: flex;
+  justify-content: space-between;
+  margin: 3px auto;
+  border: 2px solid #1e3c72;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.Title {
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.Value {
+  font-weight: bold;
+  padding: 2px;
+}
+
+.Description {
+  text-transform: lowercase;
+}
