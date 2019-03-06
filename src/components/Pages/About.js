@@ -49,7 +49,7 @@ const About = () => {
         <h5>This app was made using:</h5>
         <ul>
           {listItems.map(item => (
-            <li>
+            <li key={item.title}>
               <i className={item.icon} /> {item.title}{' '}
               <a href={item.link}>{item.linkTitle}</a>
             </li>

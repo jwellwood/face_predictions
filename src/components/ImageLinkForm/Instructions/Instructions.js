@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Collapse, Button, Alert } from 'reactstrap';
+import { Collapse, Button } from 'reactstrap';
 import InstructionsList from './InstructionsList';
 
 class Instructions extends Component {
@@ -25,10 +25,6 @@ class Instructions extends Component {
         <Collapse isOpen={collapse}>
           <InstructionsList />
         </Collapse>
-        <Alert color="info">
-          <i className="fas fa-exclamation-circle" /> Make sure that you copy
-          the image address, not just the image
-        </Alert>
       </div>
     );
   }

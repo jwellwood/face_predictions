@@ -5,13 +5,11 @@ import { Button } from 'reactstrap';
 const NavButton = props => {
   const { text, link } = props;
   return (
-    <div>
-      <NavLink to={link}>
-        <Button color="secondary" size="sm">
-          {text}
-        </Button>
-      </NavLink>
-    </div>
+    <NavLink to={link}>
+      <Button color="secondary" size="sm">
+        {text}
+      </Button>
+    </NavLink>
   );
 };
 

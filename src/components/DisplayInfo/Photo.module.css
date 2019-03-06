@@ -7,7 +7,7 @@
 
 .BoundingBox {
   position: absolute;
-  box-shadow: 0 0 0 3px #149df2 inset;
+  box-shadow: 0 0 0 3px rgb(20, 157, 242) inset;
   display: block;
   flex-wrap: wrap;
   margin: auto;
@@ -16,5 +16,5 @@
 }
 
 .BoundingBox:hover {
-  border: 1px solid green;
+  background: rgba(20, 157, 242, 0.25)
 }
