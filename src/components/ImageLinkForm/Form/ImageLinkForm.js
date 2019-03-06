@@ -1,23 +1,22 @@
 import React from 'react';
 import '../../../assets/styles/ImageLinkForm.css';
-import { Jumbotron } from 'reactstrap';
-import Instructions from '../Instructions/Instructions';
+import { InputGroup, InputGroupAddon, Input, Button } from 'reactstrap';
 
-const ImageLinkForm = ({ onInputChange, onButtonClick, onResetClick }) => {
+const ImageLinkForm = props => {
+  const { onInputChange, onButtonClick, onResetClick } = props;
   return (
     <div>
-      <input
-        className="inputField"
-        id="urlInputForm"
-        placeholder="paste image url here"
-        onChange={onInputChange}
-      />
-      <button className="detectButton" onClick={onButtonClick}>
-        Detect
-      </button>
-      <button className="resetButton" onClick={onResetClick}>
-        Reset
-      </button>
+      <InputGroup style={{ marginBottom: '0.5rem' }}>
+        <Input placeholder="paste image url here" onChange={onInputChange} />
+        <InputGroupAddon addonType="append">
+          <Button onClick={onButtonClick}>Detect</Button>
+        </InputGroupAddon>
+        <InputGroupAddon addonType="append">
+          <Button onClick={onResetClick} size="sm" color="danger">
+            <i className="fas fa-times" />
+          </Button>
+        </InputGroupAddon>
+      </InputGroup>
     </div>
   );
 };

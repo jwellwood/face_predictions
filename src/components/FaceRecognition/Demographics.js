@@ -1,12 +1,11 @@
 import React from 'react';
-
+// import { ListGroup, ListGroupItem } from 'reactstrap';
 const Demographics = props => {
   const { info } = props;
+  console.log(info.map(info => info));
   return (
     <div className="demoInfo">
-      <h4>Demographics</h4>
       <ul>
-        <hr />
         <li>
           Age: <span> {info[0]}</span>
         </li>
@@ -34,6 +33,29 @@ const Demographics = props => {
       </ul>
     </div>
   );
+
+  // return (
+  //   <ListGroup>
+  //     <ListGroupItem>
+  //       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+  //         <span>Cras justo odio</span>
+  //         <span>14</span>
+  //       </div>
+  //     </ListGroupItem>
+  //     <ListGroupItem>
+  //       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+  //         <span>Cras justo odio</span>
+  //         <span>14</span>
+  //       </div>
+  //     </ListGroupItem>
+  //     <ListGroupItem>
+  //       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+  //         <span>Cras justo odio</span>
+  //         <span>14</span>
+  //       </div>
+  //     </ListGroupItem>
+  //   </ListGroup>
+  // );
 };
 
 export default Demographics;

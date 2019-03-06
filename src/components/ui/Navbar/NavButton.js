@@ -7,7 +7,7 @@ const NavButton = props => {
   return (
     <div>
       <NavLink to={link}>
-        <Button color="primary" size="sm">
+        <Button color="secondary" size="sm">
           {text}
         </Button>
       </NavLink>

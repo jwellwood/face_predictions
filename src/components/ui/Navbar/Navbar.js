@@ -1,31 +1,23 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Navbar, NavbarBrand, Nav, Button } from 'reactstrap';
+import { Navbar, NavbarBrand, Nav } from 'reactstrap';
 import Logo from '../Logo/Logo';
-import '../../../assets/styles/Navbar.css';
 import NavButton from './NavButton';
 
-const Navigation = ({ onRouteChange }) => {
+const Navigation = props => {
   return (
-    <div>
-      <Navbar className="navbar">
-        <NavbarBrand className="brand">
-          <NavLink to="/">
-            <Logo />
-          </NavLink>
-        </NavbarBrand>
-
-        <NavButton link="/about" text="About" />
+    <Navbar color="faded">
+      <NavbarBrand className="brand">
+        <NavLink to="/">
+          <Logo />
+        </NavLink>
+      </NavbarBrand>
+      <Nav>
         <NavButton link="/detect" text="Detect" />
-        <Button
-          size="sm"
-          color="primary"
-          href="https://github.com/jwellwood/face_predictions"
-        >
-          <i className="fab fa-github" />
-        </Button>
-      </Navbar>
-    </div>
+        <NavButton link="/examples" text="Examples" />
+        <NavButton link="/about" text="About" />
+      </Nav>
+    </Navbar>
   );
 };
 

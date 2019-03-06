@@ -1,22 +1,21 @@
 import React, { Component } from 'react';
 import ImageLinkForm from '../ImageLinkForm/Form/ImageLinkForm';
-import FaceRecognition from '../FaceRecognition/FaceRecognition';
 import Clarifai from 'clarifai';
 import '../../assets/styles/App.css';
-import Title from '../ui/Title/Title';
 import Instructions from '../ImageLinkForm/Instructions/Instructions';
 import PageContainer from '../hoc/PageContainer';
 import DisplayContainer from '../DisplayInfo/DisplayContainer';
+import PageHeader from '../ui/Title/PageHeader';
 
 const app = new Clarifai.App({ apiKey: 'b687b3be89474539b5362b0c2f5f5dfc' });
+const baseURL =
+  'https://twistedsifter.files.wordpress.com/2018/02/photoshopping-trumps-face-onto-the-queens-36.jpg?w=640&h=435';
 
 class App extends Component {
   state = {
-    input:
-      'https://twistedsifter.files.wordpress.com/2018/02/photoshopping-trumps-face-onto-the-queens-36.jpg?w=640&h=435',
-    imageUrl:
-      'https://twistedsifter.files.wordpress.com/2018/02/photoshopping-trumps-face-onto-the-queens-36.jpg?w=640&h=435',
-    info: '',
+    input: baseURL,
+    imageUrl: baseURL,
+    info: [],
     box: {},
   };
 
@@ -89,9 +88,10 @@ class App extends Component {
     this.setState({ imageUrl: this.state.input });
     app.models
       .predict('c0c0ac362b03416da06ab3fa36fb58e3', this.state.input)
-      .then(response =>
-        this.displayFaceBox(this.calculateFaceLocation(response)),
-      )
+      .then(res => {
+        console.log(res);
+        this.displayFaceBox(this.calculateFaceLocation(res));
+      })
       .catch(err => console.log('unable to work with API', err));
   };
 
@@ -99,22 +99,24 @@ class App extends Component {
     this.setState({ imageUrl: this.state.input });
     app.models
       .predict('c0c0ac362b03416da06ab3fa36fb58e3', this.state.input)
-      .then(response => this.displayAgeBox(this.calculateData(response)))
+      .then(res => this.displayAgeBox(this.calculateData(res)))
       .catch(err => console.log('unable to work with API', err));
   };
 
   render() {
+    const { box, info, imageUrl } = this.state;
     return (
       <PageContainer>
+        <PageHeader title="Detect" />
         <div className="App">
           <ImageLinkForm
             onInputChange={this.onInputChange}
             onButtonClick={this.onButtonSubmit}
           />
           <DisplayContainer
-            box={this.state.box}
-            info={this.state.info}
-            imageUrl={this.state.imageUrl}
+            box={box}
+            info={info}
+            imageUrl={imageUrl}
             onFaceClick={this.onFaceClick}
           />
           <Instructions />

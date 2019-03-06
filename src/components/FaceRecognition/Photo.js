@@ -1,12 +1,13 @@
 import React from 'react';
+import styles from './Photo.module.css';
 
 const Photo = props => {
   const { imageUrl, box, onFaceClick } = props;
   return (
-    <div className="photo">
+    <div className={styles.Photo}>
       <img id="inputImage" src={imageUrl} alt="" />
       <div
-        className="bounding-box"
+        className={styles.BoundingBox}
         style={{
           top: box.topRow,
           right: box.rightCol,

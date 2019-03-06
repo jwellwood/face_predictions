@@ -1,9 +1,9 @@
 import React from 'react';
-import { Container, Col } from 'reactstrap';
+import { Container } from 'reactstrap';
 
 const PageContainer = props => {
   const { children } = props;
-  return <Container>{children}</Container>;
+  return <Container style={{ padding: '3px' }}>{children}</Container>;
 };
 
 export default PageContainer;

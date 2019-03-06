@@ -1,11 +1,12 @@
 import React from 'react';
-import { Jumbotron } from 'reactstrap';
+import { Jumbotron, Button } from 'reactstrap';
 import PageContainer from '../hoc/PageContainer';
+import PageHeader from '../ui/Title/PageHeader';
 
 const About = () => {
   return (
     <PageContainer>
-      <h4>Welcome to Face Predictor</h4>
+      <PageHeader title="About" />
       <Jumbotron>
         <h5>This app was made using the following:</h5>
         <ul>
@@ -46,6 +47,13 @@ const About = () => {
           Code can be viewed by clicking on the <i className="fab fa-github" />{' '}
           symbol
         </p>
+        <Button
+          size="sm"
+          color="primary"
+          href="https://github.com/jwellwood/face_predictions"
+        >
+          <i className="fab fa-github" />
+        </Button>
       </Jumbotron>
 
       <h4>Enjoy!</h4>

@@ -1,0 +1,20 @@
+.Photo {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  position: relative;
+}
+
+.BoundingBox {
+  position: absolute;
+  box-shadow: 0 0 0 3px #149df2 inset;
+  display: block;
+  flex-wrap: wrap;
+  margin: auto;
+  cursor: pointer;
+  z-index: 500;
+}
+
+.BoundingBox:hover {
+  border: 1px solid green;
+}
