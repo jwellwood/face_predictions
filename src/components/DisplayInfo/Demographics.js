@@ -28,7 +28,7 @@ const Demographics = props => {
 
     return (
       <ListGroup>
-        <ListGroupItem>
+        <ListGroupItem style={{ backgroundColor: 'transparent' }}>
           <ListGroupItemHeading className={styles.Title}>
             Age
           </ListGroupItemHeading>
@@ -39,7 +39,7 @@ const Demographics = props => {
             </div>
           ))}
         </ListGroupItem>
-        <ListGroupItem>
+        <ListGroupItem style={{ backgroundColor: 'transparent' }}>
           <ListGroupItemHeading className={styles.Title}>
             Gender
           </ListGroupItemHeading>
@@ -48,7 +48,7 @@ const Demographics = props => {
             <div className={styles.Value}>{getGenderPercent}%</div>
           </div>
         </ListGroupItem>
-        <ListGroupItem>
+        <ListGroupItem style={{ backgroundColor: 'transparent' }}>
           <ListGroupItemHeading className={styles.Title}>
             Background
           </ListGroupItemHeading>

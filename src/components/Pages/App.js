@@ -17,6 +17,7 @@ class App extends Component {
     imageUrl: baseURL,
     info: [],
     box: {},
+    error: false,
   };
 
   calculateFaceLocation = data => {
@@ -58,7 +59,13 @@ class App extends Component {
   };
 
   onReset = () => {
-    this.setState({ imageUrl: null, info: [], box: {}, input: '' });
+    this.setState({
+      imageUrl: null,
+      info: [],
+      box: {},
+      input: '',
+      error: false,
+    });
   };
 
   onButtonSubmit = () => {
@@ -68,7 +75,7 @@ class App extends Component {
       .then(res => {
         this.displayFaceBox(this.calculateFaceLocation(res));
       })
-      .catch(err => console.log('unable to work with API', err));
+      .catch(() => this.setState({ error: true }));
   };
 
   onFaceClick = () => {
@@ -76,11 +83,11 @@ class App extends Component {
     app.models
       .predict('c0c0ac362b03416da06ab3fa36fb58e3', this.state.input)
       .then(res => this.displayAgeBox(this.calculateData(res)))
-      .catch(err => console.log('unable to work with API', err));
+      .catch(() => this.setState({ error: true }));
   };
 
   render() {
-    const { box, info, imageUrl } = this.state;
+    const { box, info, imageUrl, error } = this.state;
     return (
       <PageContainer>
         <PageHeader title="Detect" />
@@ -90,13 +97,14 @@ class App extends Component {
             onInputChange={this.onInputChange}
             onButtonClick={this.onButtonSubmit}
             onReset={this.onReset}
+            error={error}
           />
-
           <DisplayContainer
             box={box}
             info={info}
             imageUrl={imageUrl}
             onFaceClick={this.onFaceClick}
+            error={error}
           />
         </div>
       </PageContainer>

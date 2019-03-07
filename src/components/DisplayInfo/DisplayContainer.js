@@ -5,10 +5,15 @@ import Demographics from './Demographics';
 import styles from './styles/DisplayContainer.module.css';
 
 const DisplayContainer = props => {
-  const { imageUrl, box, onFaceClick, info } = props;
+  const { imageUrl, box, onFaceClick, info, error } = props;
 
   const listItems = [
-    <Photo imageUrl={imageUrl} box={box} onFaceClick={onFaceClick} />,
+    <Photo
+      imageUrl={imageUrl}
+      box={box}
+      onFaceClick={onFaceClick}
+      error={error}
+    />,
     <Demographics info={info} />,
   ];
 

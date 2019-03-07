@@ -1,31 +1,31 @@
-import React from "react";
-import Particles from "react-particles-js";
+import React from 'react';
+import Particles from 'react-particles-js';
 
 const particlesOptions = {
   particles: {
     number: {
-      value: 20,
+      value: 50,
       density: {
         enable: true,
-        value_area: 1000
-      }
+        value_area: 500,
+      },
     },
     shape: {
-      type: "circle",
+      type: 'circle',
       stroke: {
         width: 3,
-        color: "#be8a0e"
-      }
-    }
+        color: '#5DADE2',
+      },
+    },
   },
   interactivity: {
     events: {
       onhover: {
         enable: true,
-        mode: "grab"
-      }
-    }
-  }
+        mode: 'grab',
+      },
+    },
+  },
 };
 
 const Background = () => {

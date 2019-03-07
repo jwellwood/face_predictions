@@ -1,19 +1,22 @@
 import React from 'react';
 import '../../../assets/styles/ImageLinkForm.css';
-import { InputGroup, InputGroupAddon, Input, Button, Alert } from 'reactstrap';
+import { InputGroup, InputGroupAddon, Input, Button } from 'reactstrap';
+import ErrorMessage from '../../ui/ErrorMessage';
+import styles from './Form.module.css';
 
 const ImageLinkForm = props => {
-  const { onInputChange, onButtonClick, onReset } = props;
+  const { onInputChange, onButtonClick, onReset, error } = props;
   return (
     <div>
       <InputGroup style={{ marginBottom: '0.5rem' }}>
-        <Input
-          id="input"
-          placeholder="paste image url here"
-          onChange={onInputChange}
-        />
+        <Input placeholder="paste image url here" onChange={onInputChange} />
         <InputGroupAddon addonType="append">
-          <Button onClick={onButtonClick} color="primary">
+          <Button
+            className={styles.Btn}
+            onClick={onButtonClick}
+            color="primary"
+            size="sm"
+          >
             Detect
           </Button>
         </InputGroupAddon>
@@ -23,6 +26,7 @@ const ImageLinkForm = props => {
           </Button>
         </InputGroupAddon>
       </InputGroup>
+      {error ? <ErrorMessage message="Please enter a valid url" /> : null}
     </div>
   );
 };

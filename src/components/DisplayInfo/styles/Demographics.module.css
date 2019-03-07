@@ -1,6 +1,7 @@
 .ListItem {
   display: flex;
   justify-content: space-between;
+  background: #5DADE2;
   margin: 3px auto;
   border: 2px solid #1e3c72;
   padding: 3px;
