@@ -6,7 +6,6 @@ import styles from './Form.module.css';
 
 const ImageLinkForm = props => {
   const { onInputChange, onButtonClick, onReset, error } = props;
-  const value = Object.assign({});
   return (
     <Form>
       <InputGroup style={{ marginBottom: '0.5rem' }}>

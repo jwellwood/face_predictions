@@ -9,7 +9,7 @@ const InstructionsList = () => {
           Right click on an image and select 'copy image address'
         </ListGroupItem>
         <ListGroupItem color="info">
-          Paste your image address above
+          Paste your image address in the input field
         </ListGroupItem>
         <ListGroupItem color="info">Click 'detect'</ListGroupItem>
         <ListGroupItem color="success">

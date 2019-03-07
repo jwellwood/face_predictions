@@ -17,7 +17,7 @@ const Photo = props => {
         <Placeholder
           type="photo"
           text="Your photo"
-          icon={<i class="fas fa-camera" />}
+          icon={<i className="fas fa-camera" />}
         />
       )}
 

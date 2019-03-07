@@ -8,13 +8,10 @@ import DisplayContainer from '../DisplayInfo/DisplayContainer';
 import PageHeader from '../ui/Title/PageHeader';
 
 const app = new Clarifai.App({ apiKey: process.env.REACT_APP_API_KEY });
-const baseURL =
-  'https://twistedsifter.files.wordpress.com/2018/02/photoshopping-trumps-face-onto-the-queens-36.jpg?w=640&h=435';
-
 class App extends Component {
   state = {
-    input: baseURL,
-    imageUrl: baseURL,
+    input: '',
+    imageUrl: '',
     info: [],
     box: {},
     error: false,
@@ -60,10 +57,10 @@ class App extends Component {
 
   onReset = () => {
     this.setState({
-      imageUrl: null,
+      imageUrl: '',
+      input: '',
       info: [],
       box: {},
-      input: '',
       error: false,
     });
   };
