@@ -14,7 +14,11 @@ const Photo = props => {
           style={{ borderRadius: '5px' }}
         />
       ) : (
-        <Placeholder type="photo" text="Your photo will appear here" />
+        <Placeholder
+          type="photo"
+          text="Your photo"
+          icon={<i class="fas fa-camera" />}
+        />
       )}
 
       <div

@@ -1,13 +1,14 @@
 import React from 'react';
 import '../../../assets/styles/ImageLinkForm.css';
-import { InputGroup, InputGroupAddon, Input, Button } from 'reactstrap';
+import { InputGroup, InputGroupAddon, Input, Button, Form } from 'reactstrap';
 import ErrorMessage from '../../ui/ErrorMessage';
 import styles from './Form.module.css';
 
 const ImageLinkForm = props => {
   const { onInputChange, onButtonClick, onReset, error } = props;
+  const value = Object.assign({});
   return (
-    <div>
+    <Form>
       <InputGroup style={{ marginBottom: '0.5rem' }}>
         <Input placeholder="paste image url here" onChange={onInputChange} />
         <InputGroupAddon addonType="append">
@@ -21,13 +22,13 @@ const ImageLinkForm = props => {
           </Button>
         </InputGroupAddon>
         <InputGroupAddon addonType="append">
-          <Button onClick={onReset} size="sm" color="warning">
-            <i className="fas fa-times" />
+          <Button type="reset" onClick={onReset} color="warning">
+            <i className="fas fa-undo-alt" />
           </Button>
         </InputGroupAddon>
       </InputGroup>
       {error ? <ErrorMessage message="Please enter a valid url" /> : null}
-    </div>
+    </Form>
   );
 };
 

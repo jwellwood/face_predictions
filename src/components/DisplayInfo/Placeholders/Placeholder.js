@@ -3,7 +3,7 @@ import { Jumbotron } from 'reactstrap';
 import styles from '../styles/PhotoPlaceholder.module.css';
 
 const Placeholder = props => {
-  const { type, text } = props;
+  const { type, text, icon } = props;
   let mainStyle = styles.DemoText;
   if (type === 'photo') {
     mainStyle = styles.PhotoImage;
@@ -11,6 +11,7 @@ const Placeholder = props => {
   return (
     <div>
       <Jumbotron className={mainStyle}>
+        <div>{icon}</div>
         <div>{text}</div>
       </Jumbotron>
     </div>

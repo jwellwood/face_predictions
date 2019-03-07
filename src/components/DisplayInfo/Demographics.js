@@ -64,7 +64,13 @@ const Demographics = props => {
       </ListGroup>
     );
   }
-  return <Placeholder type="demo" text="Demographic data will appear here" />;
+  return (
+    <Placeholder
+      type="demo"
+      text="Demographic data"
+      icon={<i className="fas fa-signal" />}
+    />
+  );
 };
 
 export default Demographics;

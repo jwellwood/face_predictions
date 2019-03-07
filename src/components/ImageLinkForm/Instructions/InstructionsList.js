@@ -12,10 +12,7 @@ const InstructionsList = () => {
           Paste your image address above
         </ListGroupItem>
         <ListGroupItem color="info">Click 'detect'</ListGroupItem>
-        <ListGroupItem color="info">
-          Click on the blue box to get demographic information
-        </ListGroupItem>
-        <ListGroupItem color="warning">
+        <ListGroupItem color="success">
           <i className="fas fa-exclamation-circle" /> Make sure that you copy
           the
           <strong> image address</strong>, not just the image

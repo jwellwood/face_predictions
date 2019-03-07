@@ -74,15 +74,8 @@ class App extends Component {
       .predict('c0c0ac362b03416da06ab3fa36fb58e3', this.state.input)
       .then(res => {
         this.displayFaceBox(this.calculateFaceLocation(res));
+        this.displayAgeBox(this.calculateData(res));
       })
-      .catch(() => this.setState({ error: true }));
-  };
-
-  onFaceClick = () => {
-    this.setState({ imageUrl: this.state.input });
-    app.models
-      .predict('c0c0ac362b03416da06ab3fa36fb58e3', this.state.input)
-      .then(res => this.displayAgeBox(this.calculateData(res)))
       .catch(() => this.setState({ error: true }));
   };
 
@@ -103,7 +96,6 @@ class App extends Component {
             box={box}
             info={info}
             imageUrl={imageUrl}
-            onFaceClick={this.onFaceClick}
             error={error}
           />
         </div>
