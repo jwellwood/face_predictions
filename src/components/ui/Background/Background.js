@@ -1,5 +1,6 @@
 import React from 'react';
 import Particles from 'react-particles-js';
+import styles from './Background.module.css';
 
 const particlesOptions = {
   particles: {
@@ -17,6 +18,9 @@ const particlesOptions = {
         color: '#5DADE2',
       },
     },
+    move: {
+      speed: 1,
+    },
   },
   interactivity: {
     events: {
@@ -31,7 +35,7 @@ const particlesOptions = {
 const Background = () => {
   return (
     <div>
-      <Particles className="particles" params={particlesOptions} />
+      <Particles className={styles.Background} params={particlesOptions} />
     </div>
   );
 };

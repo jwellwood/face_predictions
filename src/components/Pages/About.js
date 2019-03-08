@@ -1,8 +1,15 @@
 import React from 'react';
-import { Jumbotron, Button } from 'reactstrap';
+import {
+  Jumbotron,
+  Button,
+  ListGroup,
+  ListGroupItem,
+  ListGroupItemHeading,
+  Alert,
+} from 'reactstrap';
 import PageContainer from '../hoc/PageContainer';
 import PageHeader from '../ui/Title/PageHeader';
-import styles from './styles/About.module.css';
+import styles from '../../assets/styles/Layout.module.css';
 
 const About = () => {
   const listItem = (icon, title, link, linkTitle) => {
@@ -10,34 +17,34 @@ const About = () => {
   };
 
   const listItems = [
-    listItem('fab fa-react', 'app:', 'https://reactjs.org/', 'React js'),
+    listItem('fab fa-react', 'app', 'https://reactjs.org/', 'React js'),
     listItem(
       'fas fa-smile',
-      'face detection and demographics:',
+      'face detection and demographics',
       'https://www.clarifai.com',
       'Clarifai',
     ),
     listItem(
       'fas fa-adjust',
-      'background:',
+      'background',
       'https://www.npmjs.com/package/react-particles-jsreact-particles-js',
       'react-particles-js',
     ),
     listItem(
       'fas fa-certificate',
-      'logo:',
+      'logo',
       'https://www.npmjs.com/package/react-tilt',
       'react-tilt',
     ),
     listItem(
       'fas fa-paint-brush',
-      'styles:',
+      'styles',
       'https://reactstrap.github.io/',
       'reactstrap',
     ),
     listItem(
       'fab fa-font-awesome',
-      'icons:',
+      'icons',
       'https://fontawesome.com/',
       'font awesome',
     ),
@@ -47,21 +54,26 @@ const About = () => {
     <PageContainer>
       <PageHeader title="About" />
       <Jumbotron className={styles.Jumbotron}>
-        <h5>This app was made using:</h5>
-        <ul>
+        <div className={styles.SubTitle}>This app was made using:</div>
+        <ListGroup>
           {listItems.map(item => (
-            <li key={item.title}>
-              <i className={item.icon} /> {item.title}{' '}
-              <a href={item.link}>{item.linkTitle}</a>
-            </li>
+            <ListGroupItem key={item.title} color="info">
+              <ListGroupItemHeading>
+                <i className={item.icon} style={{ color: '#1e3c72' }} />
+              </ListGroupItemHeading>
+              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                {item.title}
+                <a href={item.link}>{item.linkTitle}</a>
+              </div>
+            </ListGroupItem>
           ))}
-        </ul>
+        </ListGroup>
         <hr />
-        <p>
+        <Alert style={{ background: 'transparent' }} color="primary">
           The app was inspired by a code-along project on Andrei Neagoie's 'Zero
           to Mastery' course
-        </p>
-        <p>
+        </Alert>
+        <Alert color="dark" style={{ marginBottom: '0px' }}>
           Source code:
           <Button
             size="sm"
@@ -70,7 +82,7 @@ const About = () => {
           >
             <i className="fab fa-github" />
           </Button>
-        </p>
+        </Alert>
       </Jumbotron>
 
       <h4>Enjoy!</h4>

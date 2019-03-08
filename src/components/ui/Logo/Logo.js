@@ -1,18 +1,12 @@
 import React from 'react';
 import Tilt from 'react-tilt';
 import logo from '../../../assets/images/logo.png';
-import '../../../assets/styles/Logo.css';
+import styles from './Logo.module.css';
 
 const Logo = () => {
   return (
-    <Tilt
-      className="Tilt br2 shadow-2 Logo"
-      options={{ max: 25 }}
-      style={{ height: 45, width: 45 }}
-    >
-      <div className="Tilt-inner inner">
-        <img src={logo} alt="logo" />
-      </div>
+    <Tilt className={styles.Tilt} options={{ max: 50 }}>
+      <img src={logo} alt="logo" />
     </Tilt>
   );
 };

@@ -3,10 +3,11 @@ import { NavLink } from 'react-router-dom';
 import { Navbar, Nav } from 'reactstrap';
 import Logo from '../Logo/Logo';
 import NavButton from './NavButton';
+import styles from './Navbar.module.css';
 
 const Navigation = props => {
   return (
-    <Navbar color="faded">
+    <Navbar color="link" className={styles.Navbar}>
       <NavLink to="/">
         <Logo />
       </NavLink>

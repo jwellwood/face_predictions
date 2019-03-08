@@ -1,0 +1,7 @@
+mainDark: #1e3c72
+mainLight: #2a5298
+lightBlue: #5DADE2
+secondaryDark: #F7971E
+secondaryLight: #FFD200
+
+Exo+2|

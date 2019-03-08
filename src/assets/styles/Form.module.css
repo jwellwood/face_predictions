@@ -1,0 +1,51 @@
+.Form {
+  border: #1e3c72 solid 1px;
+  background: #2a5298;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+.InputGroup:focus {
+  box-shadow: none;
+  outline: none;
+  outline-style: none;
+}
+
+.Input {
+  border: #fff solid 1px;
+}
+
+.Input:focus {
+  box-shadow: none;
+  outline: none;
+  outline-style: none;
+}
+
+.MainBtn {
+  background-color: #1e3c72;
+  border: #fff solid 1px;
+}
+
+.MainBtn:hover {
+  background-color: #2a5298;
+  border: #fff solid 1px;
+}
+
+.MainBtn:focus {
+  box-shadow: none;
+  outline: none;
+  outline-style: none;
+}
+
+.ResetBtn {
+  font-size: 0.75rem;
+  color: #1e3c72;
+  border: #fff solid 1px;
+}
+
+.ResetBtn:focus {
+  box-shadow: none;
+  outline: none;
+  outline-style: none;
+}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-
 import { Collapse, Button } from 'reactstrap';
 import InstructionsList from './InstructionsList';
+import styles from '../../../assets/styles/Instructions.module.css';
 
 class Instructions extends Component {
   state = { collapse: false };
@@ -13,15 +13,16 @@ class Instructions extends Component {
 
   render() {
     const { collapse } = this.state;
+
     return (
-      <div style={{ margin: '5px auto', textAlign: 'left' }}>
+      <div>
         <Button
-          color="warning"
+          color={collapse ? 'danger' : 'info'}
           onClick={this.toggle}
-          style={{ marginBottom: '0.5rem' }}
           size="sm"
+          className={styles.Button}
         >
-          Toggle Instructions
+          <i className="fas fa-question" />
         </Button>
         <Collapse isOpen={collapse}>
           <InstructionsList />

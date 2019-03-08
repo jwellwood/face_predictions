@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './styles/Photo.module.css';
-import Placeholder from './Placeholders/Placeholder';
+import styles from '../../../assets/styles/DisplayInfo.module.css';
+import Placeholder from './Placeholder';
 
 const Photo = props => {
   const { imageUrl, box, onFaceClick } = props;

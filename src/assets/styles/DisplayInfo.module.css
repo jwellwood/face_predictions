@@ -1,0 +1,58 @@
+.ListItem {
+  display: flex;
+  justify-content: space-between;
+  background: #5DADE2;
+  margin: 3px auto;
+  border: 2px solid #1e3c72;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.Title {
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.Value {
+  font-weight: bold;
+  padding: 2px;
+}
+
+.Description {
+  text-transform: lowercase;
+}
+
+.Photo {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  position: relative;
+}
+
+.BoundingBox {
+  position: absolute;
+  box-shadow: 0 0 0 3px rgb(20, 157, 242) inset;
+  display: block;
+  flex-wrap: wrap;
+  margin: auto;
+  cursor: pointer;
+  z-index: 500;
+}
+
+.BoundingBox:hover {
+  background: rgba(20, 157, 242, 0.25)
+}
+
+.PhotoImage {
+  background-color: rgba(247, 151, 30, 0.6);
+  border: 3px dashed #F7971E;
+  margin-bottom: 3px;
+}
+
+.DemoText {
+  background-color: rgba(30, 60, 114, 0.6);
+  border: 3px solid #1e3c72;
+  margin-bottom: 3px;
+  color: #F7971E
+}

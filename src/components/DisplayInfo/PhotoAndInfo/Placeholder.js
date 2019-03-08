@@ -1,6 +1,6 @@
 import React from 'react';
 import { Jumbotron } from 'reactstrap';
-import styles from '../styles/PhotoPlaceholder.module.css';
+import styles from '../../../assets/styles/DisplayInfo.module.css';
 
 const Placeholder = props => {
   const { type, text, icon } = props;
@@ -11,7 +11,7 @@ const Placeholder = props => {
   return (
     <div>
       <Jumbotron className={mainStyle}>
-        <div>{icon}</div>
+        <div style={{ fontSize: '1.5rem' }}>{icon}</div>
         <div>{text}</div>
       </Jumbotron>
     </div>

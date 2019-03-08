@@ -1,0 +1,10 @@
+.Button {
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.List {
+  margin-bottom: 10px;
+}

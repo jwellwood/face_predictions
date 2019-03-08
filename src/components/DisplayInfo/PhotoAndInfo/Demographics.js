@@ -1,8 +1,8 @@
 import React from 'react';
 import { ListGroup, ListGroupItem, ListGroupItemHeading } from 'reactstrap';
-import { getMax, getMin, getAverage, getBestResults } from './functions';
-import styles from './styles/Demographics.module.css';
-import Placeholder from './Placeholders/Placeholder';
+import { getMax, getMin, getAverage, getBestResults } from '../../../functions';
+import styles from '../../../assets/styles/DisplayInfo.module.css';
+import Placeholder from './Placeholder';
 
 const Demographics = props => {
   const { info } = props;

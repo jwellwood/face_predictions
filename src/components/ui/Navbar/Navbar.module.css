@@ -1,5 +1,24 @@
+.NavLink {
+  /* margin: 2px;
+  border: 1px solid #1e3c72;
+  text-decoration: none; */
+}
+
 .NavButton {
   margin: 2px;
   border: 1px solid #1e3c72;
   text-decoration: none;
+  background: #1e3c72;
+}
+
+.NavButton:hover {
+  text-decoration: none;
+  color: #1e3c72;
+  background: #fff
+}
+
+
+.Navbar {
+  background: #1e3c72;
+  border-bottom: 2px #5DADE2 solid;
 }

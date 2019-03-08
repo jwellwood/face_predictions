@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import ImageLinkForm from '../ImageLinkForm/Form/ImageLinkForm';
 import Clarifai from 'clarifai';
-import '../../assets/styles/App.css';
-import Instructions from '../ImageLinkForm/Instructions/Instructions';
 import PageContainer from '../hoc/PageContainer';
 import DisplayContainer from '../DisplayInfo/DisplayContainer';
 import PageHeader from '../ui/Title/PageHeader';
@@ -65,7 +62,7 @@ class App extends Component {
     });
   };
 
-  onButtonSubmit = () => {
+  onSubmit = () => {
     this.setState({ imageUrl: this.state.input });
     app.models
       .predict('c0c0ac362b03416da06ab3fa36fb58e3', this.state.input)
@@ -81,21 +78,15 @@ class App extends Component {
     return (
       <PageContainer>
         <PageHeader title="Detect" />
-        <Instructions />
-        <div className="App">
-          <ImageLinkForm
-            onInputChange={this.onInputChange}
-            onButtonClick={this.onButtonSubmit}
-            onReset={this.onReset}
-            error={error}
-          />
-          <DisplayContainer
-            box={box}
-            info={info}
-            imageUrl={imageUrl}
-            error={error}
-          />
-        </div>
+        <DisplayContainer
+          box={box}
+          info={info}
+          imageUrl={imageUrl}
+          onInputChange={this.onInputChange}
+          onButtonClick={this.onSubmit}
+          onReset={this.onReset}
+          error={error}
+        />
       </PageContainer>
     );
   }

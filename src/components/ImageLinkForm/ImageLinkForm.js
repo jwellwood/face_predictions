@@ -1,18 +1,21 @@
 import React from 'react';
-import '../../../assets/styles/ImageLinkForm.css';
 import { InputGroup, InputGroupAddon, Input, Button, Form } from 'reactstrap';
-import ErrorMessage from '../../ui/ErrorMessage';
-import styles from './Form.module.css';
+import ErrorMessage from '../ui/ErrorMessage/ErrorMessage';
+import styles from '../../assets/styles/Form.module.css';
 
 const ImageLinkForm = props => {
   const { onInputChange, onButtonClick, onReset, error } = props;
   return (
-    <Form>
-      <InputGroup style={{ marginBottom: '0.5rem' }}>
-        <Input placeholder="paste image url here" onChange={onInputChange} />
+    <Form className={styles.Form}>
+      <InputGroup className={styles.InputGroup}>
+        <Input
+          placeholder="paste image url here"
+          onChange={onInputChange}
+          className={styles.Input}
+        />
         <InputGroupAddon addonType="append">
           <Button
-            className={styles.Btn}
+            className={styles.MainBtn}
             onClick={onButtonClick}
             color="primary"
             size="sm"
@@ -21,7 +24,12 @@ const ImageLinkForm = props => {
           </Button>
         </InputGroupAddon>
         <InputGroupAddon addonType="append">
-          <Button type="reset" onClick={onReset} color="warning">
+          <Button
+            type="reset"
+            onClick={onReset}
+            color="warning"
+            className={styles.ResetBtn}
+          >
             <i className="fas fa-undo-alt" />
           </Button>
         </InputGroupAddon>

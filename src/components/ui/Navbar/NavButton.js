@@ -6,8 +6,8 @@ import styles from './Navbar.module.css';
 const NavButton = props => {
   const { text, link } = props;
   return (
-    <NavLink to={link} className={styles.NavButton}>
-      <Button color="info" size="sm">
+    <NavLink to={link} className={styles.NavLink}>
+      <Button size="sm" className={styles.NavButton}>
         {text}
       </Button>
     </NavLink>
