@@ -14,7 +14,6 @@ const Navigation = props => {
 
       <Nav>
         <NavButton link="/detect" text="Detect" />
-        <NavButton link="/examples" text="Examples" />
         <NavButton link="/about" text="About" />
       </Nav>
     </Navbar>

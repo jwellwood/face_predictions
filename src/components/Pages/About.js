@@ -6,6 +6,7 @@ import {
   ListGroupItem,
   ListGroupItemHeading,
   Alert,
+  Fade,
 } from 'reactstrap';
 import PageContainer from '../hoc/PageContainer';
 import PageHeader from '../ui/Title/PageHeader';
@@ -68,13 +69,15 @@ const About = () => {
             </ListGroupItem>
           ))}
         </ListGroup>
-        <hr />
+
         <Alert style={{ background: 'transparent' }} color="primary">
           The app was inspired by a code-along project on Andrei Neagoie's 'Zero
-          to Mastery' course
+          to Mastery' course. I take no responsibility for any offence caused if
+          you don't like the results you get.
         </Alert>
-        <Alert color="dark" style={{ marginBottom: '0px' }}>
-          Source code:
+
+        <div style={{ fontSize: '12px' }}>
+          2019 jwellwood on Github{' '}
           <Button
             size="sm"
             color="link"
@@ -82,10 +85,11 @@ const About = () => {
           >
             <i className="fab fa-github" />
           </Button>
-        </Alert>
+        </div>
       </Jumbotron>
-
-      <h4>Enjoy!</h4>
+      <Fade timeout={1000}>
+        <h3 style={{ color: '#5DADE2' }}>Enjoy!</h3>
+      </Fade>
     </PageContainer>
   );
 };

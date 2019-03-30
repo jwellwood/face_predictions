@@ -13,6 +13,7 @@ const ImageLinkForm = props => {
           onChange={onInputChange}
           className={styles.Input}
         />
+
         <InputGroupAddon addonType="append">
           <Button
             className={styles.MainBtn}

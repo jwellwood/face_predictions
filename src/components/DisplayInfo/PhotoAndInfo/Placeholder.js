@@ -1,5 +1,5 @@
 import React from 'react';
-import { Jumbotron } from 'reactstrap';
+import { Jumbotron, Fade } from 'reactstrap';
 import styles from '../../../assets/styles/DisplayInfo.module.css';
 
 const Placeholder = props => {
@@ -11,8 +11,10 @@ const Placeholder = props => {
   return (
     <div>
       <Jumbotron className={mainStyle}>
-        <div style={{ fontSize: '1.5rem' }}>{icon}</div>
-        <div>{text}</div>
+        <Fade in={icon && text ? true : false} timeout={400}>
+          <div style={{ fontSize: '1.5rem' }}>{icon}</div>
+          <div>{text}</div>
+        </Fade>
       </Jumbotron>
     </div>
   );

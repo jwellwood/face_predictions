@@ -25,6 +25,7 @@ const DisplayContainer = props => {
       onFaceClick={onFaceClick}
       error={error}
     />,
+
     <Demographics info={info} />,
   ];
 
